@@ -1,0 +1,1632 @@
+
+Diana@CertainPoint MINGW64 ~
+$ pwd
+/c/Users/Diana
+
+Diana@CertainPoint MINGW64 ~
+$ mkdir GitTestsDirectory
+
+Diana@CertainPoint MINGW64 ~
+$ cd GitTestsDirectory
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory
+$ pwd
+/c/Users/Diana/GitTestsDirectory
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory
+$ git version
+git version 2.51.0.windows.1
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory
+$ .git
+bash: .git: command not found
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory
+$ git init
+Initialized empty Git repository in C:/Users/Diana/GitTestsDirectory/.git/
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ ls -la
+total 20
+drwxr-xr-x 1 Diana 197609 0 Apr  1 10:11 ./
+drwxr-xr-x 1 Diana 197609 0 Apr  1 10:09 ../
+drwxr-xr-x 1 Diana 197609 0 Apr  1 10:11 .git/
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ cd .git
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory/.git (GIT_DIR!)
+$ ls -ls
+total 7
+1 -rw-r--r-- 1 Diana 197609  23 Apr  1 10:11 HEAD
+1 -rw-r--r-- 1 Diana 197609 130 Apr  1 10:11 config
+1 -rw-r--r-- 1 Diana 197609  73 Apr  1 10:11 description
+4 drwxr-xr-x 1 Diana 197609   0 Apr  1 10:11 hooks/
+0 drwxr-xr-x 1 Diana 197609   0 Apr  1 10:11 info/
+0 drwxr-xr-x 1 Diana 197609   0 Apr  1 10:11 objects/
+0 drwxr-xr-x 1 Diana 197609   0 Apr  1 10:11 refs/
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory/.git (GIT_DIR!)
+$ ls -la
+total 11
+drwxr-xr-x 1 Diana 197609   0 Apr  1 10:11 ./
+drwxr-xr-x 1 Diana 197609   0 Apr  1 10:11 ../
+-rw-r--r-- 1 Diana 197609  23 Apr  1 10:11 HEAD
+-rw-r--r-- 1 Diana 197609 130 Apr  1 10:11 config
+-rw-r--r-- 1 Diana 197609  73 Apr  1 10:11 description
+drwxr-xr-x 1 Diana 197609   0 Apr  1 10:11 hooks/
+drwxr-xr-x 1 Diana 197609   0 Apr  1 10:11 info/
+drwxr-xr-x 1 Diana 197609   0 Apr  1 10:11 objects/
+drwxr-xr-x 1 Diana 197609   0 Apr  1 10:11 refs/
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory/.git (GIT_DIR!)
+$ cd ..
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ ls
+123.txt
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        123.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git add 123.txt
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git add .
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   123.txt
+
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git commit -m "My first commit"
+[master (root-commit) 9b76ea5] My first commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 123.txt
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git log
+commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:20:26 2026 +1000
+
+    My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   123.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git diff
+diff --git a/123.txt b/123.txt
+index e69de29..bb8823b 100644
+--- a/123.txt
++++ b/123.txt
+@@ -0,0 +1 @@
++Nest message (master)
+\ No newline at end of file
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git add .
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   123.txt
+
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git commit -m "My second commit"
+[master 60235fd] My second commit
+ 1 file changed, 1 insertion(+)
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git log
+commit 60235fd5acf1b6f48c332005451729a280021715 (HEAD -> master)
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+:...skipping...
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+
+commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:20:26 2026 +1000
+
+    My first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+
+commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:20:26 2026 +1000
+
+    My first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+
+commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:20:26 2026 +1000
+
+    My first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+
+commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:20:26 2026 +1000
+
+    My first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+
+commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:20:26 2026 +1000
+
+    My first commit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+
+commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:20:26 2026 +1000
+
+    My first commit
+(END)
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+
+commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:20:26 2026 +1000
+
+    My first commit
+(END)
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+
+commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:20:26 2026 +1000
+
+    My first commit
+(END)
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+
+commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:20:26 2026 +1000
+
+    My first commit
+~
+(END)
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+
+commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:20:26 2026 +1000
+
+    My first commit
+~
+(END)
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+
+commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:20:26 2026 +1000
+
+    My first commit
+(END)
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+:
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+q
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git log
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+
+commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:20:26 2026 +1000
+
+    My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git log --graph
+* commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (HEAD -> master)
+| Author: Ban049 <banyou049@gmail.com>
+| Date:   Wed Apr 1 10:30:02 2026 +1000
+|
+|     3 commit (master)
+|
+* commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+| Author: Ban049 <banyou049@gmail.com>
+| Date:   Wed Apr 1 10:29:51 2026 +1000
+|
+|     2 commit (master)
+|
+* commit 8860701315d483a625fd6924c258a9dedb69a818
+| Author: Ban049 <banyou049@gmail.com>
+| Date:   Wed Apr 1 10:29:32 2026 +1000
+|
+|     1 commit (master)
+|
+* commit 60235fd5acf1b6f48c332005451729a280021715
+| Author: Ban049 <banyou049@gmail.com>
+| Date:   Wed Apr 1 10:27:33 2026 +1000
+|
+|     My second commit
+|
+* commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+  Author: Ban049 <banyou049@gmail.com>
+  Date:   Wed Apr 1 10:20:26 2026 +1000
+
+      My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git log --graph -oneline
+fatal: unrecognized argument: -oneline
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git log --graph --oneline
+* f7e6dbb (HEAD -> master) 3 commit (master)
+* ad0610d 2 commit (master)
+* 8860701 1 commit (master)
+* 60235fd My second commit
+* 9b76ea5 My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git branch
+* master
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git branch br_1
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git branch
+  br_1
+* master
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git checkout br_1
+Switched to branch 'br_1'
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (br_1)
+$ git branch
+* br_1
+  master
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (br_1)
+$ git add .
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (br_1)
+$ git commit -m "Create commit (Br_1)"
+[br_1 e0bd27f] Create commit (Br_1)
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (br_1)
+$ git log
+commit e0bd27f295eb378619a1741443e3b99b370c3624 (HEAD -> br_1)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:38:52 2026 +1000
+
+    Create commit (Br_1)
+
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (master)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+
+commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:20:26 2026 +1000
+
+    My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (br_1)
+$ git log --graph --oneline
+* e0bd27f (HEAD -> br_1) Create commit (Br_1)
+* f7e6dbb (master) 3 commit (master)
+* ad0610d 2 commit (master)
+* 8860701 1 commit (master)
+* 60235fd My second commit
+* 9b76ea5 My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (br_1)
+$ git log --graph
+* commit e0bd27f295eb378619a1741443e3b99b370c3624 (HEAD -> br_1)
+| Author: Ban049 <banyou049@gmail.com>
+| Date:   Wed Apr 1 10:38:52 2026 +1000
+|
+|     Create commit (Br_1)
+|
+* commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396 (master)
+| Author: Ban049 <banyou049@gmail.com>
+| Date:   Wed Apr 1 10:30:02 2026 +1000
+|
+|     3 commit (master)
+|
+* commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+| Author: Ban049 <banyou049@gmail.com>
+| Date:   Wed Apr 1 10:29:51 2026 +1000
+|
+|     2 commit (master)
+|
+* commit 8860701315d483a625fd6924c258a9dedb69a818
+| Author: Ban049 <banyou049@gmail.com>
+| Date:   Wed Apr 1 10:29:32 2026 +1000
+|
+|     1 commit (master)
+|
+* commit 60235fd5acf1b6f48c332005451729a280021715
+| Author: Ban049 <banyou049@gmail.com>
+| Date:   Wed Apr 1 10:27:33 2026 +1000
+|
+|     My second commit
+|
+* commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+  Author: Ban049 <banyou049@gmail.com>
+  Date:   Wed Apr 1 10:20:26 2026 +1000
+
+      My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (br_1)
+$ git log --graph --oneline
+* e0bd27f (HEAD -> br_1) Create commit (Br_1)
+* f7e6dbb (master) 3 commit (master)
+* ad0610d 2 commit (master)
+* 8860701 1 commit (master)
+* 60235fd My second commit
+* 9b76ea5 My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (br_1)
+$ git add .
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (br_1)
+$ git commit -m "1 commit (Br_1)"
+[br_1 b2abae6] 1 commit (Br_1)
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (br_1)
+$ git log --graph --oneline
+* b2abae6 (HEAD -> br_1) 1 commit (Br_1)
+* e0bd27f Create commit (Br_1)
+* f7e6dbb (master) 3 commit (master)
+* ad0610d 2 commit (master)
+* 8860701 1 commit (master)
+* 60235fd My second commit
+* 9b76ea5 My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (br_1)
+$ git checkout master
+Switched to branch 'master'
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git add .
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git commit -m "4 commit (Main)"
+[master 8639bc2] 4 commit (Main)
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git log --graph --oneline
+* 8639bc2 (HEAD -> master) 4 commit (Main)
+* f7e6dbb 3 commit (master)
+* ad0610d 2 commit (master)
+* 8860701 1 commit (master)
+* 60235fd My second commit
+* 9b76ea5 My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git log --graph
+* commit 8639bc29a4cd079daef81740ef6a326399a41469 (HEAD -> master)
+| Author: Ban049 <banyou049@gmail.com>
+| Date:   Wed Apr 1 10:45:10 2026 +1000
+|
+|     4 commit (Main)
+|
+* commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396
+| Author: Ban049 <banyou049@gmail.com>
+| Date:   Wed Apr 1 10:30:02 2026 +1000
+|
+|     3 commit (master)
+|
+* commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+| Author: Ban049 <banyou049@gmail.com>
+| Date:   Wed Apr 1 10:29:51 2026 +1000
+|
+|     2 commit (master)
+|
+* commit 8860701315d483a625fd6924c258a9dedb69a818
+| Author: Ban049 <banyou049@gmail.com>
+| Date:   Wed Apr 1 10:29:32 2026 +1000
+|
+|     1 commit (master)
+|
+* commit 60235fd5acf1b6f48c332005451729a280021715
+| Author: Ban049 <banyou049@gmail.com>
+| Date:   Wed Apr 1 10:27:33 2026 +1000
+|
+|     My second commit
+|
+* commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+  Author: Ban049 <banyou049@gmail.com>
+  Date:   Wed Apr 1 10:20:26 2026 +1000
+
+      My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git merge br_1
+Auto-merging 123.txt
+CONFLICT (content): Merge conflict in 123.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master|MERGING)
+$ git add .
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master|MERGING)
+$ git commit -m "5 commit (Master)"
+[master 210586a] 5 commit (Master)
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git log --graph --oneline
+*   210586a (HEAD -> master) 5 commit (Master)
+|\
+| * b2abae6 (br_1) 1 commit (Br_1)
+| * e0bd27f Create commit (Br_1)
+* | 8639bc2 4 commit (Main)
+|/
+* f7e6dbb 3 commit (master)
+* ad0610d 2 commit (master)
+* 8860701 1 commit (master)
+* 60235fd My second commit
+* 9b76ea5 My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git checkout 8639bc2
+Note: switching to '8639bc2'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 8639bc2 4 commit (Main)
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory ((8639bc2...))
+$ git checkout Br_2
+error: pathspec 'Br_2' did not match any file(s) known to git
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory ((8639bc2...))
+$ git checkout -b Br_2
+Switched to a new branch 'Br_2'
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git bache
+git: 'bache' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git brache
+git: 'brache' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git branch
+* Br_2
+  br_1
+  master
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git add .
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git commit -m "1 commit (Br_2)"
+On branch Br_2
+nothing to commit, working tree clean
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git commit -m "1 commit (Br_2)"
+On branch Br_2
+nothing to commit, working tree clean
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git commit -m "1 commit (Br_2)"
+On branch Br_2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   123.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git add /
+fatal: C:/Program Files/Git/: 'C:/Program Files/Git/' is outside repository at 'C:/Users/Diana/GitTestsDirectory'
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git add .
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git commit -m "1 commit (Br_2)"
+[Br_2 8522172] 1 commit (Br_2)
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git add .
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git commit -m "2 commit (Br_2)"
+[Br_2 1e6b522] 2 commit (Br_2)
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git add .
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git commit -m "3 commit (Br_2)"
+[Br_2 bdf151a] 3 commit (Br_2)
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git log
+commit bdf151ab52b72a0d494ec5a0e6d03b1bf4062808 (HEAD -> Br_2)
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:52:06 2026 +1000
+
+    3 commit (Br_2)
+
+commit 1e6b522b863ad617804da3157c80eff281cbb42e
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:51:54 2026 +1000
+
+    2 commit (Br_2)
+
+commit 8522172f7847ac2d743f667fbb7091a71b7bc6f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:51:35 2026 +1000
+
+    1 commit (Br_2)
+
+commit 8639bc29a4cd079daef81740ef6a326399a41469
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:45:10 2026 +1000
+
+    4 commit (Main)
+
+commit f7e6dbbfd177081d9e4e6ae1ec6b5c52e3511396
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:30:02 2026 +1000
+
+    3 commit (master)
+
+commit ad0610d20f07bb9472aa80064dc867f2ec3a85f4
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:51 2026 +1000
+
+    2 commit (master)
+
+commit 8860701315d483a625fd6924c258a9dedb69a818
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:29:32 2026 +1000
+
+    1 commit (master)
+
+commit 60235fd5acf1b6f48c332005451729a280021715
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:27:33 2026 +1000
+
+    My second commit
+
+commit 9b76ea5ba4bd031fc3c33b049442bb6717a77795
+Author: Ban049 <banyou049@gmail.com>
+Date:   Wed Apr 1 10:20:26 2026 +1000
+
+    My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git log --graph --oneline
+* bdf151a (HEAD -> Br_2) 3 commit (Br_2)
+* 1e6b522 2 commit (Br_2)
+* 8522172 1 commit (Br_2)
+* 8639bc2 4 commit (Main)
+* f7e6dbb 3 commit (master)
+* ad0610d 2 commit (master)
+* 8860701 1 commit (master)
+* 60235fd My second commit
+* 9b76ea5 My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (Br_2)
+$ git checkout master
+Switched to branch 'master'
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master)
+$ git merge Br_2
+Auto-merging 123.txt
+CONFLICT (content): Merge conflict in 123.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master|MERGING)
+$ git log --graph --oneline
+*   210586a (HEAD -> master) 5 commit (Master)
+|\
+| * b2abae6 (br_1) 1 commit (Br_1)
+| * e0bd27f Create commit (Br_1)
+* | 8639bc2 4 commit (Main)
+|/
+* f7e6dbb 3 commit (master)
+* ad0610d 2 commit (master)
+* 8860701 1 commit (master)
+* 60235fd My second commit
+* 9b76ea5 My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master|MERGING)
+$ git merge Br_2
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master|MERGING)
+$ git log --graph --oneline
+*   210586a (HEAD -> master) 5 commit (Master)
+|\
+| * b2abae6 (br_1) 1 commit (Br_1)
+| * e0bd27f Create commit (Br_1)
+* | 8639bc2 4 commit (Main)
+|/
+* f7e6dbb 3 commit (master)
+* ad0610d 2 commit (master)
+* 8860701 1 commit (master)
+* 60235fd My second commit
+* 9b76ea5 My first commit
+
+Diana@CertainPoint MINGW64 ~/GitTestsDirectory (master|MERGING)
+$
