@@ -1,5 +1,5 @@
 
-Diana@CertainPoint MINGW64 ~
+Diana@CertainPoint MINGW64 ~vnvnvnnvn
 $ pwd
 /c/Users/Diana
 
